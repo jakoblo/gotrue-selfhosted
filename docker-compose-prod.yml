@@ -30,6 +30,7 @@ services:
       - "--certificatesresolvers.letsencrypt.acme.email=${TRAEFIK_LETSENCRYPT_EMAIL}"
       - "--certificatesresolvers.letsencrypt.acme.storage=/letsencrypt/acme.json"
       - "--entrypoints.websecure.http.tls.certresolver=letsencrypt" #default resolver
+      - "--providers.docker.network=frontend"
     volumes:  
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - traefik_tls:/letsencrypt
