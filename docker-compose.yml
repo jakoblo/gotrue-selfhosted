@@ -14,7 +14,7 @@ services:
       - "80:80"
       - "8080:8080"
     command:
-      #- "--log.level=DEBUG"
+      - "--log.level=${TRAEFIK_LOG_LEVEL}"
       - "--global.sendanonymoususage=false"
       - "--api.insecure=true"
       - "--api.dashboard=true"
