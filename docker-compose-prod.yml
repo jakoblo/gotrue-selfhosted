@@ -35,7 +35,7 @@ services:
       - traefik_tls:/letsencrypt
 
   auth:
-    container_name: gotrue-auth
+    container_name: gotrue
     image: supabase/gotrue:v2.2.12
     depends_on:
       - db
@@ -76,6 +76,7 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.gotrue.rule=Host(`${TRAEFIK_ROUTER_HOST}`)"
       - "traefik.http.routers.gotrue.entrypoints=websecure"
+      - "traefik.http.routers.gotrue.tls=true"
       - "traefik.http.middlewares.cors.headers.accesscontrolallowmethods=*"
       - "traefik.http.middlewares.cors.headers.accesscontrolalloworiginlist=*"
       - "traefik.http.middlewares.cors.headers.accesscontrolallowcredentials=true"
@@ -85,7 +86,7 @@ services:
       - "traefik.http.routers.gotrue.middlewares=cors@docker"
 
   db:
-    container_name: postgres-db
+    container_name: postgres
     image: supabase/postgres:14.1.0
     command: postgres -c config_file=/etc/postgresql/postgresql.conf
     restart: unless-stopped

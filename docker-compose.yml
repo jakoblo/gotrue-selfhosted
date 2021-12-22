@@ -27,7 +27,7 @@ services:
 
 
   auth:
-    container_name: gotrue-auth
+    container_name: gotrue
     image: supabase/gotrue:v2.2.12
     depends_on:
       - db
@@ -77,7 +77,7 @@ services:
       - traefik.http.routers.gotrue.middlewares=cors@docker
 
   db:
-    container_name: postgres-db
+    container_name: postgres
     image: supabase/postgres:14.1.0
     command: postgres -c config_file=/etc/postgresql/postgresql.conf
     restart: unless-stopped
