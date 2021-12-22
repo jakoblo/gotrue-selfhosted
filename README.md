@@ -18,8 +18,7 @@ git clone https://github.com/majorgyb/gotrue-selfhosted
 cd gotrue-selfhosted
 
 # Start
-docker-compose --env-file ./.env.example up 
-
+docker-compose --env-file ./.env.example up
 ```
 
 ### Production Environment
