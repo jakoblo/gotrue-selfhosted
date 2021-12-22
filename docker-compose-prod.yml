@@ -98,10 +98,11 @@ services:
     environment:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
-      - /var/lib/postgresql/data
+      - db_data:/var/lib/postgresql/data
       - ./db:/docker-entrypoint-initdb.d
 
 volumes:
+  db_data:
   traefik_tls:
 
 networks:
