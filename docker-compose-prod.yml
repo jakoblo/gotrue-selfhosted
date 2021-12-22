@@ -78,6 +78,7 @@ services:
       - "traefik.http.routers.gotrue.rule=Host(`${TRAEFIK_ROUTER_HOST}`)"
       - "traefik.http.routers.gotrue.entrypoints=websecure"
       - "traefik.http.services.auth.loadbalancer.server.port=${API_PORT}"
+      - "traefik.http.routers.gotrue.tls.certresolver=letsencrypt"   
       - "traefik.http.routers.gotrue.tls=true"
       - "traefik.http.middlewares.cors.headers.accesscontrolallowmethods=*"
       - "traefik.http.middlewares.cors.headers.accesscontrolalloworiginlist=*"
