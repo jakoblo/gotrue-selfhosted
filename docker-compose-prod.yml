@@ -86,6 +86,7 @@ services:
       - "traefik.http.middlewares.cors.headers.accesscontrolmaxage=100"
       - "traefik.http.middlewares.cors.headers.accessControlAllowHeaders=*"
       - "traefik.http.middlewares.cors.headers.addvaryheader=true"
+      - "traefik.http.middlewares.ratelimit.ratelimit.average=30"
       - "traefik.http.routers.gotrue.middlewares=cors@docker"
 
   db:
