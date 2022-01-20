@@ -28,7 +28,7 @@ services:
 
   auth:
     container_name: gotrue
-    image: supabase/gotrue:v2.3.8
+    image: supabase/gotrue:v2.4.0
     depends_on:
       - db
     ports:
