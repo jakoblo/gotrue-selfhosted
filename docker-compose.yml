@@ -7,7 +7,7 @@ version: "3.3"
 
 services:
   traefik:
-    image: "traefik:v2.5"
+    image: "traefik:v2.6"
     container_name: "traefik"
     restart: unless-stopped
     ports:
@@ -28,7 +28,7 @@ services:
 
   auth:
     container_name: gotrue
-    image: supabase/gotrue:v2.4.0
+    image: supabase/gotrue:v2.5.8
     depends_on:
       - db
     ports:
