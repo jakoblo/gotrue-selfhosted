@@ -7,6 +7,7 @@ create schema if not exists extensions;
 create extension if not exists "uuid-ossp"      with schema extensions;
 create extension if not exists pgcrypto         with schema extensions;
 create extension if not exists pgjwt            with schema extensions;
+CREATE extension if not exists http             with schema extensions;
 
 grant usage                     on schema public to postgres;
 alter default privileges in schema public grant all on tables to postgres;
