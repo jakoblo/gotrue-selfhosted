@@ -112,8 +112,6 @@ services:
     image: supabase/postgres:14.1.0
     command: postgres -c config_file=/etc/postgresql/postgresql.conf
     restart: unless-stopped
-    ports:
-      - "5432:5432"
     networks:
       - backend
     environment:
